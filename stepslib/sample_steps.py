@@ -1,44 +1,43 @@
-from pytest_bdd import given, when, then
+import logging
 
-from logger import logger
+from pytest_bdd import scenarios, given, then
 
-@given('MTA is installed on target cluster And Contains Some Data')
+# Define scenarios
+scenarios('../features/sample.feature')
+
+logger = logging.getLogger()
+
+@given('MTA is installed on target cluster And Contains Tags, Tags Type and some analysis data')
 def step_given_mta_installed_with_data():
-    logger.info("Deploying using cypress")
-
-@given('Backup MTA using OADP')
-@when('Backup MTA using OADP')
-def step_when_backup_mta_with_oadp():
-    logger.info("Running Backup using OADP test framework")
+    logger.info("MTA is installed on target cluster And Contains Tags, Tags Type and some analysis data")
     pass
 
-
-@when('Remove MTA')
-def step_when_remove_mta():
-    logger.info("oc delete...")
-    pass
-
-
-@when('Restore MTA')
-@when('Restore MTA using OADP')
-def step_when_restore_mta_with_oadp():
-    logger.info("Running Restore using oc")
-    pass
-
-
-@then('MTA is installed on target cluster And Contains Some Data')
-def step_then_mta_installed_with_data():
-    logger.info("Using api test framework to verify the mtv data")
-    pass
-
-
-@given('Openshift Cluster Is Deployed')
+@given('Some MTA Analysis are running')
 def step_given_openshift_cluster_is_installed():
-    logger.info("If no cluster, deploy it.")
+    logger.info("Some MTA Analysis are running")
     pass
 
 
-@given('OADP Operator is Deployed')
+@given('Some MTA Analysis are running')
 def step_given_openshift_cluster_is_installed():
-    logger.info("If no cluster, deploy it.")
+    logger.info("ome MTA Analysis are running.")
     pass
+
+@given('Remove MTA')
+def step_given_openshift_cluster_is_installed():
+    logger.info("Remove MTA.")
+    pass
+
+@given('Restore MTA using OADP')
+def step_given_openshift_cluster_is_installed():
+    logger.info("Restore MTA using OADP")
+    pass
+
+
+@given('MTA is installed on target cluster and contains all data')
+@then('MTA is installed on target cluster and contains all data')
+def step_given_openshift_cluster_is_installed():
+    logger.info("MTA is installed on target cluster and contains all data")
+    pass
+
+
