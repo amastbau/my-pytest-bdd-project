@@ -1,0 +1,1 @@
+pytest-bdd generate features/sample.feature
